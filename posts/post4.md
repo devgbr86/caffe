@@ -1,4 +1,4 @@
-# Front-end/Copywriting Tutorial 2026: O Ebook Completo para Criadores Digitais
+# Front-end Tutorial 2026: O Ebook Completo e Atualizado para Desenvolvedores
 
 Se você é desenvolvedor front-end, criador de conteúdo digital ou quer aprender a criar sites e ebooks do zero, este é o guia definitivo que você precisa. O **Git Front-End Copywriting Tutorial 2026** é um ebook completo que reúne tudo o que você precisa saber para dominar o desenvolvimento web moderno e a criação de conteúdo profissional.
 
