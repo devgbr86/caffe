@@ -2,6 +2,7 @@
 // CONFIGURAÇÃO - ADICIONE SEUS POSTS AQUI
 // ===================================
 const POSTS = [
+  "post7.md",
   "post6.md",
   "post5.md",
   "post4.md",
