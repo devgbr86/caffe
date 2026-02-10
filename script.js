@@ -1,16 +1,28 @@
 // ===================================
 // CONFIGURAÇÃO - ADICIONE SUAS PÁGINAS WIKI AQUI
 // ===================================
-const SECTIONS = [
+
+// POSTS QUE APARECEM NA HOME (escolha apenas 5)
+const HOME_POSTS = [
   "intro.md",
   "arabica/especie-arabica.md",
   "post3.md",
+  "post4.md",
+  "post5.md"
+];
+
+// TODOS OS POSTS (para busca e navegação completa)
+const ALL_SECTIONS = [
+  "intro.md",
+  "arabica/especie-arabica.md",
+  "teste.md",
   "post4.md",
   "post5.md",
   "post6.md",
   "post7.md",
   "post8.md",
-  "post9.md"
+  "post9.md",
+  "post10.md"
 ];
 
 // ===================================
@@ -60,8 +72,9 @@ if (file) {
 
   let data = [];
 
+  // Usa ALL_SECTIONS para indexar TUDO na busca
   Promise.all(
-    SECTIONS.map(async f => {
+    ALL_SECTIONS.map(async f => {
       const md = await fetchMD(f);
       const title = md.match(/^#\s(.+)/m)?.[1] || f.replace('.md', '');
       return { 
@@ -104,14 +117,15 @@ if (file) {
     });
   }
 
-// ----- LISTA DE PÁGINAS -----
+// ----- LISTA DE PÁGINAS (HOME) -----
 } else {
   show(listView);
 
   const ul = document.getElementById("posts");
 
+  // Usa HOME_POSTS para mostrar apenas 5 selecionados
   Promise.all(
-    SECTIONS.map(async f => {
+    HOME_POSTS.map(async f => {
       const md = await fetchMD(f);
       const title = md.match(/^#\s(.+)/m)?.[1] || f.replace('.md', '');
       return { file: f, title: title };
