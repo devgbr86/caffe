@@ -133,43 +133,47 @@ main {
 }
 
 /* ===================================
-   LISTAS
+   LISTAS EM GRID (4 COLUNAS)
    =================================== */
 
 #posts,
 #results {
      list-style: none;
-     background: #ffffff;
-     border-radius: 16px;
-     padding: 1.5rem 0;
-     box-shadow: 0 8px 32px rgba(62, 39, 35, 0.12);
-     border: 1px solid rgba(109, 76, 65, 0.15);
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 1.25rem;
+     padding: 0;
 }
 
 #posts li,
 #results li {
-     padding: 1.5rem 2rem;
-     border-bottom: 1px solid rgba(109, 76, 65, 0.08);
+     background: #ffffff;
+     padding: 1.5rem 1.25rem;
+     border-radius: 12px;
+     box-shadow: 0 4px 16px rgba(62, 39, 35, 0.1);
+     border: 1px solid rgba(109, 76, 65, 0.15);
      transition: all 0.3s ease;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     min-height: 100px;
 }
 
 #posts li:hover,
 #results li:hover {
-     background: linear-gradient(90deg, rgba(161, 136, 127, 0.06) 0%, transparent 100%);
-     padding-left: 2.5rem;
-}
-
-#posts li:last-child,
-#results li:last-child {
-     border-bottom: none;
+     transform: translateY(-4px);
+     box-shadow: 0 8px 24px rgba(62, 39, 35, 0.18);
+     background: linear-gradient(135deg, rgba(161, 136, 127, 0.04) 0%, #ffffff 100%);
+     border-color: #a1887f;
 }
 
 #posts a,
 #results a {
      color: #2d1b13;
      text-decoration: none;
-     font-size: 1.2rem;
+     font-size: 1rem;
      display: block;
+     text-align: center;
      transition: all 0.3s ease;
      font-weight: 600;
 }
@@ -329,6 +333,27 @@ footer {
 }
 
 /* ===================================
+   RESPONSIVIDADE TABLET GRANDE
+   =================================== */
+
+@media (max-width: 1024px) {
+     main {
+          padding-top: 210px;
+     }
+
+     #list-view h2 {
+          font-size: 2.2rem;
+     }
+
+     /* Grid 3 colunas em tablet grande */
+     #posts,
+     #results {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.25rem;
+     }
+}
+
+/* ===================================
    RESPONSIVIDADE TABLET
    =================================== */
 
@@ -381,14 +406,22 @@ footer {
           margin-bottom: 2rem;
      }
 
+     /* Grid 2 colunas em tablet */
+     #posts,
+     #results {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+     }
+
      #posts li,
      #results li {
-          padding: 1.25rem 1.5rem;
+          padding: 1.4rem 1.1rem;
+          min-height: 95px;
      }
 
      #posts a,
      #results a {
-          font-size: 1.1rem;
+          font-size: 0.95rem;
      }
 
      footer {
@@ -460,14 +493,22 @@ footer {
           font-size: 1.7rem;
      }
 
+     /* Grid 1 coluna em mobile */
+     #posts,
+     #results {
+          grid-template-columns: 1fr;
+          gap: 0.9rem;
+     }
+
      #posts li,
      #results li {
-          padding: 1.15rem 1.25rem;
+          padding: 1.3rem 1rem;
+          min-height: 85px;
      }
 
      #posts a,
      #results a {
-          font-size: 1.05rem;
+          font-size: 0.95rem;
      }
 
      footer {
