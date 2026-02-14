@@ -1,0 +1,7 @@
+# robots.txt para CaffeWiki
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://devgbr86.github.io/caffe-wiki/sitemap.xml
